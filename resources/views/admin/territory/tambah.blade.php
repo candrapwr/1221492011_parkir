@@ -2,20 +2,20 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Add Territory</h4>
+                <h4 class="modal-title" id="myModalLabel">Tambah WIlayah</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <form action="{{ asset('admin/territory/tambah') }}" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                     {{ csrf_field() }}
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Name</label>
+						<label class="col-sm-3 control-label text-right">Nama</label>
 						<div class="col-sm-9">
 							<input type="text" name="name" class="form-control" placeholder="Name"  value="{{ old('name') }}" required>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">City</label>					
+						<label class="col-sm-3 control-label text-right">Kota</label>					
 						<div class="col-sm-6">
 							<select name="city" class="form-control" required>
 								<option value=""></option>

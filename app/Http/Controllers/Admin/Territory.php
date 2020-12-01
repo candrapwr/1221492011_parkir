@@ -28,7 +28,7 @@ class Territory extends Controller
         ->get();
 
         $data = array(
-            'title' => 'Territory Management',
+            'title' => 'Pengaturan Wilayah',
             'modelCity' => $modelCity,
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/index'
@@ -49,7 +49,7 @@ class Territory extends Controller
             ->first();
 
         $data = array(
-            'title' => 'Edit Territory',
+            'title' => 'Ubah WIlayah',
 			'modelCity' => $modelCity,
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/edit'

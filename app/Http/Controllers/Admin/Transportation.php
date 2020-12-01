@@ -22,7 +22,7 @@ class Transportation extends Controller
             ->get();
 
         $data = array(
-            'title' => 'Transportation Category',
+            'title' => 'Kategori Kendaraan',
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/index'
         );
@@ -40,7 +40,7 @@ class Transportation extends Controller
             ->first();
 
         $data = array(
-            'title' => 'Edit Transportation Category',
+            'title' => 'Ubah Kategori',
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/edit'
         );

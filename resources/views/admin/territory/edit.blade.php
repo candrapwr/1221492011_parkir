@@ -11,13 +11,13 @@
     {{ csrf_field() }}
     <input type="hidden" name="id" value="<?php echo $modelData->id ?>">
     <div class="form-group row">
-        <label class="col-sm-3 control-label text-right">Name</label>
+        <label class="col-sm-3 control-label text-right">Nama</label>
         <div class="col-sm-9">
             <input type="text" name="name" class="form-control" value="<?php echo $modelData->name ?>" required>
         </div>
     </div>
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">City</label>					
+		<label class="col-sm-3 control-label text-right">Kota</label>					
 		<div class="col-sm-6">
 			<select name="city" class="form-control" required>
 				<option value=""></option>

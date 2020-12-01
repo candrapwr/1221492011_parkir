@@ -77,11 +77,11 @@
     <hr class="sidebar-divider">
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/userdevices') }}">
-        <i class="fa fa-fw fa-user-circle"></i> <span>Jukir Device</span></a>
+        <i class="fa fa-fw fa-user-circle"></i> <span>Perangkat Jukir</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/devices') }}">
-        <i class="fa fa-fw fa-mobile"></i> <span>Master Device</span></a>
+        <i class="fa fa-fw fa-mobile"></i> <span>Perangkat</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -89,11 +89,11 @@
     <hr class="sidebar-divider">
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/assigns') }}">
-        <i class="fa fa-fw fa-user-circle"></i> <span>Jukir Registered</span></a>
+        <i class="fa fa-fw fa-user-circle"></i> <span>Daftar Jukir</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/user') }}">
-        <i class="fa fa-fw fa-users"></i> <span>Users</span></a>
+        <i class="fa fa-fw fa-users"></i> <span>User</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -101,19 +101,19 @@
     <hr class="sidebar-divider">
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/fee') }}">
-        <i class="fa fa-fw fa-money-bill"></i> <span>Fee Rates</span></a>
+        <i class="fa fa-fw fa-money-bill"></i> <span>Tarif Parkir</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/lot') }}">
-        <i class="fa fa-fw fa-map"></i> <span>Parking Lots</span></a>
+        <i class="fa fa-fw fa-map"></i> <span>Area Parkir</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/territory') }}">
-        <i class="fa fa-fw fa-sitemap"></i> <span>Territory</span></a>
+        <i class="fa fa-fw fa-sitemap"></i> <span>Wilayah</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/transportation') }}">
-        <i class="fa fa-fw fa-car"></i> <span>Transportation Category</span></a>
+        <i class="fa fa-fw fa-car"></i> <span>Kategori Kendaraan</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
