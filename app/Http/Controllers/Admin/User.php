@@ -68,10 +68,12 @@ class User extends Controller
         }
         request()
             ->validate(['name' => 'required']);
+		
+		$code = $this->getKode($request->role);
 
         DB::table($this->tableOp)->insert([
 		'username' => $request->username,
-		'id_smartparkir' => $request->id_smartparkir,
+		'id_smartparkir' => $code,
 		'npp' => $request->npp,
 		'name' => $request->name,
 		'address' => $request->address,
@@ -135,6 +137,41 @@ class User extends Controller
 			
         return redirect('admin/'.$this->modulOp.'')
             ->with(['sukses' => 'Data has been deleted']);
+    }
+	
+    public function getKode($id)
+    {
+        if (Session()->get('username') == "")
+        {
+            return redirect('login')
+                ->with(['warning' => 'Mohon maaf, Anda belum login']);
+        }
+		
+		$code = $this->getKodeKat($id);		
+		$data  = DB::select("
+		SELECT MAX(a.id_smartparkir) AS maxKode FROM users a
+		WHERE a.id_smartparkir LIKE '%".$code."%'
+		");
+		$noUrut = (int) substr($data[0]->maxKode, 3, 4);
+		$noUrut++;
+
+		$char = $code;
+		$kode = $char . sprintf("%04s", $noUrut);
+		return $kode;
+    }
+	
+    public function getKodeKat($id)
+    {
+        if (Session()->get('username') == "")
+        {
+            return redirect('login')
+                ->with(['warning' => 'Mohon maaf, Anda belum login']);
+        }
+		$data  = DB::select("
+		SELECT code FROM role 
+		WHERE id='".$id."'
+		");	
+		return $data[0]->code;
     }
 }
 

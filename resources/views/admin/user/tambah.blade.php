@@ -14,12 +14,9 @@
 							<input type="text" name="username" class="form-control" value="{{ old('username') }}" required autocomplete="off">
 						</div>
 					</div>					
-					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">ID</label>
-						<div class="col-sm-4">
-							<input type="text" name="id_smartparkir" class="form-control" value="{{ old('id_smartparkir') }}" required>
-						</div>
-					</div>					
+
+							<input type="hidden" name="id_smartparkir" class="form-control" value="-" required>
+					
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">NPP</label>
 						<div class="col-sm-4">

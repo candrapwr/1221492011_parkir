@@ -13,13 +13,13 @@
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">Username</label>
 						<div class="col-sm-9">
-							<input type="text" name="username" class="form-control" value="<?php echo $modelData->username ?>" required autocomplete="off">
+							<input type="text" name="username" class="form-control" value="<?php echo $modelData->username ?>" readonly autocomplete="off">
 						</div>
 					</div>					
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">ID</label>
 						<div class="col-sm-4">
-							<input type="text" name="id_smartparkir" class="form-control" value="<?php echo $modelData->id_smartparkir ?>" required>
+							<input type="text" name="id_smartparkir" class="form-control" value="<?php echo $modelData->id_smartparkir ?>" readonly>
 						</div>
 					</div>					
 					<div class="form-group row">
