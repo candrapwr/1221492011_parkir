@@ -26,7 +26,7 @@
 	<div class="form-group row">
 		<label class="col-sm-3 control-label text-right"></label>
 		<div class="col-sm-4">
-			<div id="map" style="border:1px solid #0b0;height:450px;width:780px;"></div>
+			<div id="map" style="border:1px solid #0b0;height:450px;width:750px;"></div>
 				<input id="pac-input" class="form-control" style="margin-top:12px;width:60%;" type="text" placeholder="Search Place" size="10">
 			</div>
 	</div>	
