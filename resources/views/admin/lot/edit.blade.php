@@ -55,9 +55,10 @@
 	<div class="form-group row">
 		<label class="col-sm-3 control-label text-right">Set Tampil Target</label>					
 		<div class="col-sm-6">
-			<select name="territory" class="form-control" required>
-				<option value="HARIAN">HARIAN</option>
-				<option value="BULANAN">BULANAN</option>
+			<select name="target_view" class="form-control" required>
+				<option value=""></option>
+				<option value="HARIAN" @if('HARIAN'==$modelData->target_view) selected @endif>HARIAN</option>
+				<option value="BULANAN" @if('BULANAN'==$modelData->target_view) selected @endif>BULANAN</option>
 			</select>
 		</div>	
 	</div>

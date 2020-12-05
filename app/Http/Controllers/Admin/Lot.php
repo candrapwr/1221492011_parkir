@@ -75,7 +75,8 @@ class Lot extends Controller
 		'lng' => $request->lng,
 		'territory' => $request->territory,
 		'target_daily_profit' => $request->target_daily_profit,
-		'created_by' => $request->created_by
+		'created_by' => $request->created_by,
+		'target_view' => $request->target_view
 		]);
         return redirect('admin/'.$this->modulOp.'')
             ->with(['sukses' => 'Data has been added']);
@@ -100,7 +101,8 @@ class Lot extends Controller
 			'lng' => $request->lng,
 			'territory' => $request->territory,
 			'target_daily_profit' => $request->target_daily_profit,
-			'created_by' => $request->created_by
+			'created_by' => $request->created_by,
+			'target_view' => $request->target_view
 			]);
         return redirect('admin/'.$this->modulOp.'')
             ->with(['sukses' => 'Data has update']);

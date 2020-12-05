@@ -30,6 +30,7 @@
 					<th>Wilayah</th>
 					<th>Target Hari</th>
 					<th>Target Bulan</th>
+					<th>Set Tampil</th>
 					<th width="5%">Actions</th>
 				</tr>
 			</thead>
@@ -44,6 +45,7 @@
 				<td><?php echo $value->territory_name ?></td>
 				<td><?php echo number_format($value->target_daily_profit) ?></td>
 				<td><?php echo number_format($value->target_daily_profit*30) ?></td>
+				<td><?php echo $value->target_view ?></td>
 				<td>
 					<div class="btn-group">
 						<a href="{{ asset('admin/lot/edit/'.Crypt::encrypt($value->id)) }}" 
