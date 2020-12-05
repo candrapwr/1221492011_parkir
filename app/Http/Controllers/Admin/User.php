@@ -26,7 +26,7 @@ class User extends Controller
 		->select($this->tableOp.'.*','role.name as role_name')
 		->join('role',$this->tableOp.'.role','=','role.id')
 		//->where('is_deleted', '0')
-		->orderBy($this->tableOp.'.id', 'ASC')
+		->orderBy($this->tableOp.'.id', 'DESC')
         ->get();
 
         $data = array(
@@ -93,19 +93,30 @@ class User extends Controller
                 ->with(['warning' => 'Mohon maaf, Anda belum login']);
         }
         request()
-            ->validate(['name' => 'required']);
+            ->validate(['username' => 'required']);
 
+		if($request->password){
 		DB::table($this->tableOp)
 			->where($this->tableOpK, $request->id)
 			->update([
+			'npp' => $request->npp,
 			'name' => $request->name,
 			'address' => $request->address,
-			'lat' => $request->lat,
-			'lng' => $request->lng,
-			'territory' => $request->territory,
-			'target_daily_profit' => $request->target_daily_profit,
-			'created_by' => $request->created_by
+			'phone_number' => $request->phone_number,
+			'role' => $request->role,
+			'password' => Hash::make($request->password)
 			]);
+		}else{
+			DB::table($this->tableOp)
+				->where($this->tableOpK, $request->id)
+				->update([
+				'npp' => $request->npp,
+				'name' => $request->name,
+				'address' => $request->address,
+				'phone_number' => $request->phone_number,
+				'role' => $request->role
+				]);			
+		}
         return redirect('admin/'.$this->modulOp.'')
             ->with(['sukses' => 'Data has update']);
     }

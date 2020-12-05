@@ -60,7 +60,8 @@
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">Password</label>
 						<div class="col-sm-9">
-							<input type="password" name="password" class="form-control" value="" required autocomplete="off">
+							<input type="password" name="password" class="form-control" value="" autocomplete="off">
+							<em>Kosongkan jika tidak ingin menggati password</em>
 						</div>
 					</div>		
 
