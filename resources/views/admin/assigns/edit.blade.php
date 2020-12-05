@@ -12,9 +12,9 @@
     <input type="hidden" name="id" value="<?php echo $modelData->id ?>">
 	<input type="hidden" name="created_by" value="2">
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Parking Lot</label>					
+		<label class="col-sm-3 control-label text-right">Area Parkir</label>					
 		<div class="col-sm-6">
-			<select name="parking_lot" class="form-control" required>
+			<select name="parking_lot" class="form-control sel2" required>
 				<option value=""></option>
 				@foreach($modelLot as $lot)
 				<option value="{{ $lot->id }}" @if($lot->id==$modelData->parking_lot) selected @endif>{{ $lot->name }}</option>
@@ -25,7 +25,7 @@
 	<div class="form-group row">
 		<label class="col-sm-3 control-label text-right">Jukir</label>					
 		<div class="col-sm-6">
-			<select name="jukir" class="form-control" required>
+			<select name="jukir" class="form-control sel2" required>
 				<option value=""></option>
 				@foreach($modelJukir as $jukir)
 				<option value="{{ $jukir->id }}" @if($jukir->id==$modelData->jukir) selected @endif>{{ $jukir->name }}</option>

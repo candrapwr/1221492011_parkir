@@ -19,7 +19,7 @@ class User extends Controller
             ->get();
 
         $data = array(
-            'title' => 'Pengguna Website',
+            'title' => 'Pengguna',
             'user' => $user,
             'content' => 'admin/user/index'
         );

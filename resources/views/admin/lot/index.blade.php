@@ -12,7 +12,7 @@
 </p>
 <div class="btn-group">
 	<button type="button" class="btn btn-success " data-toggle="modal" data-target="#Tambah">
-	<i class="fa fa-plus"></i> Add Data
+	<i class="fa fa-plus"></i> Tambah Area Parkir
 	</button>
 </div>
 <div class="clearfix">
@@ -24,12 +24,12 @@
 			<thead>
 				<tr>
 					<th width="5%">No</th>
-					<th>Name</th>
-					<th>Address</th>
+					<th>Nama</th>
+					<th>Lokasi</th>
 					<th>Map</th>
-					<th>Territory</th>
-					<th>Target Daily</th>
-					<th>Created</th>
+					<th>Wilayah</th>
+					<th>Target Hari</th>
+					<th>Target Bulan</th>
 					<th width="5%">Actions</th>
 				</tr>
 			</thead>
@@ -43,7 +43,7 @@
 				<td>[]</td>
 				<td><?php echo $value->territory_name ?></td>
 				<td><?php echo number_format($value->target_daily_profit) ?></td>
-				<td><?php echo $value->created_by_name ?></td>
+				<td><?php echo number_format($value->target_daily_profit*30) ?></td>
 				<td>
 					<div class="btn-group">
 						<a href="{{ asset('admin/lot/edit/'.Crypt::encrypt($value->id)) }}" 

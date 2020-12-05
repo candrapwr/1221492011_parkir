@@ -12,7 +12,7 @@
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">Jukir</label>					
 						<div class="col-sm-6">
-							<select name="user" class="form-control" required>
+							<select name="user" class="form-control sel2" required>
 								<option value=""></option>
 								@foreach($modelJukir as $jukir)
 								<option value="{{ $jukir->id }}">{{ $jukir->name }}</option>
@@ -23,7 +23,7 @@
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">Device</label>					
 						<div class="col-sm-6">
-							<select name="device" class="form-control" required>
+							<select name="device" class="form-control sel2" required>
 								<option value=""></option>
 								@foreach($modelDevice as $device)
 								<option value="{{ $device->id }}">{{ $device->serial_number }}</option>

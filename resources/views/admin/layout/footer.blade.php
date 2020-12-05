@@ -198,5 +198,12 @@ tinymce.init({
   <script src="{{ asset('public/admin/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
   <!-- Page level custom scripts -->
   <script src="{{ asset('public/admin/js/demo/datatables-demo.js') }}"></script>
+  <script src="{{ asset('public/js/select2/select2.min.js') }}"></script>
+	<script>
+	$('.sel2').select2({
+    dropdownAutoWidth : true,
+    width: 'auto'
+});
+	</script>
 </body>
 </html>

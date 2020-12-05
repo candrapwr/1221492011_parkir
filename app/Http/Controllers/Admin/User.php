@@ -30,7 +30,7 @@ class User extends Controller
         ->get();
 
         $data = array(
-            'title' => 'User Management',
+            'title' => 'User Manajemen',
             'modelRole' => $modelRole,
 			'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/index'
@@ -45,14 +45,14 @@ class User extends Controller
             return redirect('login')
                 ->with(['warning' => 'Mohon maaf, Anda belum login']);
         }
-        $modelTerritory = DB::table('p_territory')->get();
+        $modelRole = DB::table('role')->get();
 		
         $modelData = DB::table($this->tableOp)->where($this->tableOpK, Crypt::decrypt($id))->orderBy($this->tableOpK, 'DESC')
             ->first();
 
         $data = array(
-            'title' => 'Edit Fee Rates',
-            'modelTerritory' => $modelTerritory,
+            'title' => 'Ubah User',
+            'modelRole' => $modelRole,
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/edit'
         );

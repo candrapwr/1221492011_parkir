@@ -9,7 +9,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Registered Jukir</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jukir Terdaftar</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo number_format($totalJukir) ?></div>
                     </div>
                     <div class="col-auto">
@@ -25,7 +25,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Online Jukir</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jukir Online</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                     </div>
                     <div class="col-auto">
@@ -42,7 +42,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Fee This Year</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Transaksi Tahun Ini</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp <?php echo number_format($totalTahun->fee) ?></div>
@@ -63,7 +63,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Fee This Month</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Transaksi Bulan Ini</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format($totalBulan->fee) ?></div>
                     </div>
                     <div class="col-auto">
@@ -84,18 +84,6 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Transaction this year</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -137,10 +125,59 @@
                 </div>
               </div>
             </div>
-          </div>
-
+            <div class="col-xl-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Capaian Transaksi</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="">
+					<div class="table-responsive mailbox-messages">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="tbl1" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th width="5%">No</th>
+										<th>Tanggal</th>
+										<th>Area Parkir</th>
+										<th>Target</th>
+										<th>Capaian</th>
+										<th>Porsentase</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $i=1; foreach($modelDataTG as $value) { ?>
+									<td class="text-center">
+										<small class="text-center"><?php echo $i ?></small>
+									</td>
+									<td><?php echo $value->dates ?></td>
+									<td><?php echo $value->parking_lot_name ?></td>
+									<td><?php echo number_format($value->target) ?></td>
+									<td><?php echo number_format($value->fee) ?></td>
+									<td><?php echo round($value->capai,2) ?>%</td>
+									</tr>
+									<?php $i++; } ?>
+								</tbody>
+							</table>
+						</div>
+					</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+		</div>
 <script src="{{ asset('public/admin/vendor/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('public/admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('public/admin/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 <script>
+ $('#tbl1').DataTable({
+    searching: false, 
+    paging: true,
+    dom: 'Bfrtip',
+	info: false
+ });
 // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';

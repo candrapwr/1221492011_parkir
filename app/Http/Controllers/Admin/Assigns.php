@@ -33,7 +33,7 @@ class Assigns extends Controller
         ->get();
 
         $data = array(
-            'title' => 'User Assigns',
+            'title' => 'Daftar Jukir',
             'modelJukir' => $modelJukir,
             'modelLot' => $modelLot,
             'modelData' => $modelData,
@@ -58,7 +58,7 @@ class Assigns extends Controller
             ->first();
 
         $data = array(
-            'title' => 'Edit Fee Rates',
+            'title' => 'Ubah Daftar Jukir',
             'modelJukir' => $modelJukir,
             'modelLot' => $modelLot,
             'modelData' => $modelData,

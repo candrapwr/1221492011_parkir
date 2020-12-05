@@ -98,6 +98,15 @@ function()
     Route::post('admin/user/proses_edit', 'User@proses_edit');
     Route::get('admin/user/delete/{par1}', 'User@delete');
     Route::post('admin/user/proses', 'User@proses');
+	
+    // user
+    Route::get('admin/resume_day', 'Resume_day@index');
+    Route::get('admin/report_day/v_report_day', 'Report_day@v_report_day');
+    Route::get('admin/report_day/r_report_day', 'Report_day@r_report_day');
+    Route::get('admin/report_day/v_report_rekap', 'Report_day@v_report_rekap');
+    Route::get('admin/report_day/r_report_rekap', 'Report_day@r_report_rekap');
+    Route::get('admin/report_day/r_report_rekap_a', 'Report_day@r_report_rekap_a');
+    Route::get('admin/report_day/r_report_rekap_w', 'Report_day@r_report_rekap_w');
     
 });
 

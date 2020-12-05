@@ -53,24 +53,25 @@
     </li>
     <!-- TRANSAKSI -->
     <hr class="sidebar-divider">
-    <div class="sidebar-heading">Summary</div>
+    <div class="sidebar-heading">Ringkasan</div>
     <hr class="sidebar-divider">
     <li class="nav-item">
-        <a class="nav-link" href="{{ asset('admin/dasbor') }}">
-        <i class="fas fa-fw fa-newspaper"></i> <span>Daily Resume</span></a>
+        <a class="nav-link" href="{{ asset('admin/resume_day') }}">
+        <i class="fas fa-fw fa-newspaper"></i> <span>Transaksi Harian</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <div class="sidebar-heading">Reporting</div>
+    <div class="sidebar-heading">Laporan</div>
     <hr class="sidebar-divider">
     <li class="nav-item">
-        <a class="nav-link" href="{{ asset('admin/dasbor') }}">
-        <i class="fa fa-fw fa-calendar"></i> <span>Daily Transactions</span></a>
+        <a class="nav-link" href="{{ asset('admin/report_day/v_report_day') }}">
+        <i class="fa fa-fw fa-calendar"></i> <span>Laporan Detail Tranasaksi</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{ asset('admin/dasbor') }}">
-        <i class="fa fa-fw fa-calendar"></i> <span>Date Range Transactions</span></a>
+        <a class="nav-link" href="{{ asset('admin/report_day/v_report_rekap') }}">
+        <i class="fa fa-fw fa-calendar"></i> <span>Rekap Tranasaksi Bulanan</span></a>
     </li>	
+	<?php if(Session()->get('role')=='99'){?>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <div class="sidebar-heading">Device Management</div>
@@ -116,6 +117,7 @@
         <i class="fa fa-fw fa-car"></i> <span>Kategori Kendaraan</span></a>
     </li>
     <!-- Divider -->
+	<?php } ?>
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

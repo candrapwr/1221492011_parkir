@@ -12,7 +12,7 @@
 </p>
 <div class="btn-group">
 	<button type="button" class="btn btn-success " data-toggle="modal" data-target="#Tambah">
-	<i class="fa fa-plus"></i> Add Data
+	<i class="fa fa-plus"></i> Tambah Tarif
 	</button>
 </div>
 <div class="clearfix">
@@ -24,10 +24,9 @@
 			<thead>
 				<tr>
 					<th width="5%">No</th>
-					<th>Territory</th>
-					<th>Transportation</th>
-					<th>Fee</th>
-					<th>Created</th>
+					<th>Area Parkir</th>
+					<th>Kendaraan</th>
+					<th>Tarif</th>
 					<th width="5%">Actions</th>
 				</tr>
 			</thead>
@@ -39,7 +38,6 @@
 				<td><?php echo $value->territory_name ?></td>
 				<td><?php echo $value->transportation_name ?></td>
 				<td><?php echo number_format($value->fee) ?></td>
-				<td><?php echo $value->created_by_name ?></td>
 				<td>
 					<div class="btn-group">
 						<a href="{{ asset('admin/fee/edit/'.Crypt::encrypt($value->id)) }}" 

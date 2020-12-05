@@ -29,7 +29,7 @@ class Lot extends Controller
         ->get();
 
         $data = array(
-            'title' => 'Parking Lot',
+            'title' => 'Area Parkir',
             'modelTerritory' => $modelTerritory,
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/index'
@@ -50,7 +50,7 @@ class Lot extends Controller
             ->first();
 
         $data = array(
-            'title' => 'Edit Fee Rates',
+            'title' => 'Ubah Area Parkir',
             'modelTerritory' => $modelTerritory,
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/edit'

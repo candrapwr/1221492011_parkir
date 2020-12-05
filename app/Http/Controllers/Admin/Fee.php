@@ -31,7 +31,7 @@ class Fee extends Controller
         ->get();
 
         $data = array(
-            'title' => 'Fee Rates',
+            'title' => 'Tarif Parkir',
             'modelTransportation' => $modelTransportation,
             'modelTerritory' => $modelTerritory,
             'modelData' => $modelData,

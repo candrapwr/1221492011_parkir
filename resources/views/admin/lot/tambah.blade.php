@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Add Parking Lot</h4>
+                <h4 class="modal-title" id="myModalLabel">Tambah Area Parkir</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
@@ -10,13 +10,13 @@
                     {{ csrf_field() }}
 					<input type="hidden" name="created_by" value="2">
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Name</label>
+						<label class="col-sm-3 control-label text-right">Nama</label>
 						<div class="col-sm-9">
 							<input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
 						</div>
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Address</label>
+						<label class="col-sm-3 control-label text-right">Alamat</label>
 						<div class="col-sm-9">
 							<textarea name="address" id="address"  class="form-control">{{ old('address') }}</textarea>						
 						</div>
@@ -34,7 +34,7 @@
 						</div>
 					</div>					
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Territory</label>					
+						<label class="col-sm-3 control-label text-right">Wilayah</label>					
 						<div class="col-sm-6">
 							<select name="territory" class="form-control" required>
 								<option value=""></option>
@@ -45,11 +45,20 @@
 						</div>	
 					</div>
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Target Daily Profit</label>
+						<label class="col-sm-3 control-label text-right">Target Harian</label>
 						<div class="col-sm-4">
 							<input type="number" name="target_daily_profit" class="form-control" value="{{ old('target_daily_profit') }}" required>
 						</div>
-					</div>						
+					</div>	
+					<div class="form-group row">
+						<label class="col-sm-3 control-label text-right">Set Tampil Target</label>					
+						<div class="col-sm-6">
+							<select name="territory" class="form-control" required>
+								<option value="HARIAN">HARIAN</option>
+								<option value="BULANAN">BULANAN</option>
+							</select>
+						</div>	
+					</div>					
                     <div class="form-group row">
                         <label class="col-sm-3 control-label text-right"></label>
                         <div class="col-sm-9">

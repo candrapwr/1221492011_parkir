@@ -12,7 +12,7 @@
 </p>
 <div class="btn-group">
 	<button type="button" class="btn btn-success " data-toggle="modal" data-target="#Tambah">
-	<i class="fa fa-plus"></i> Add Data
+	<i class="fa fa-plus"></i> Tambah Jukir
 	</button>
 </div>
 <div class="clearfix">
@@ -24,7 +24,7 @@
 			<thead>
 				<tr>
 					<th width="5%">No</th>
-					<th>Parking Lot</th>
+					<th>Area Parkir</th>
 					<th>Jukir</th>
 					<th width="5%">Actions</th>
 				</tr>

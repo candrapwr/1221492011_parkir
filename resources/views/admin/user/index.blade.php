@@ -12,7 +12,7 @@
 </p>
 <div class="btn-group">
 	<button type="button" class="btn btn-success " data-toggle="modal" data-target="#Tambah">
-	<i class="fa fa-plus"></i> Add Data
+	<i class="fa fa-plus"></i> Tambah User
 	</button>
 </div>
 <div class="clearfix">
@@ -25,12 +25,12 @@
 				<tr>
 					<th width="5%">No</th>
 					<th>Username</th>
-					<th>Name</th>
-					<th>ID APP</th>
+					<th>Nama</th>
+					<th>ID</th>
 					<th>NPP</th>
-					<th>Address</th>
-					<th>Phone</th>
-					<th>Role</th>
+					<th>ALamat</th>
+					<th>Telepon</th>
+					<th>Hak Akses</th>
 					<th width="5%">Actions</th>
 				</tr>
 			</thead>

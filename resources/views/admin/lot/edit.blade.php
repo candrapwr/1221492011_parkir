@@ -12,13 +12,13 @@
     <input type="hidden" name="id" value="<?php echo $modelData->id ?>">
 	<input type="hidden" name="created_by" value="2">
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Name</label>
+		<label class="col-sm-3 control-label text-right">Nama</label>
 		<div class="col-sm-9">
 			<input type="text" name="name" class="form-control" value="<?php echo $modelData->name ?>" required>
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Address</label>
+		<label class="col-sm-3 control-label text-right">Alamat</label>
 		<div class="col-sm-9">
 			<textarea name="address" id="address"  class="form-control"><?php echo $modelData->address ?></textarea>						
 		</div>
@@ -36,7 +36,7 @@
 		</div>
 	</div>					
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Territory</label>					
+		<label class="col-sm-3 control-label text-right">Wilayah</label>					
 		<div class="col-sm-6">
 			<select name="territory" class="form-control" required>
 				<option value=""></option>
@@ -47,17 +47,26 @@
 		</div>	
 	</div>
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Target Daily Profit</label>
+		<label class="col-sm-3 control-label text-right">Target Harian</label>
 		<div class="col-sm-4">
 			<input type="number" name="target_daily_profit" class="form-control" value="<?php echo $modelData->target_daily_profit ?>" required>
 		</div>
 	</div>	
+	<div class="form-group row">
+		<label class="col-sm-3 control-label text-right">Set Tampil Target</label>					
+		<div class="col-sm-6">
+			<select name="territory" class="form-control" required>
+				<option value="HARIAN">HARIAN</option>
+				<option value="BULANAN">BULANAN</option>
+			</select>
+		</div>	
+	</div>
     <div class="form-group row">
         <label class="col-sm-3 control-label text-right"></label>
         <div class="col-sm-9">
             <div class="form-group pull-right btn-group">
-                <input type="submit" name="submit" class="btn btn-primary " value="Save">
-                <a href="{{ asset('admin/lot') }}" class="btn btn-danger">Back</a>
+                <input type="submit" name="submit" class="btn btn-primary " value="Simpan">
+                <a href="{{ asset('admin/lot') }}" class="btn btn-danger">Batal</a>
             </div>
         </div>
         <div class="clearfix"></div>

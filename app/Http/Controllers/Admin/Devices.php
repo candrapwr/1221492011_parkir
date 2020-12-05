@@ -22,7 +22,7 @@ class Devices extends Controller
             ->get();
 
         $data = array(
-            'title' => 'Devices Management',
+            'title' => 'Menejemen Perangkat',
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/index'
         );
@@ -40,7 +40,7 @@ class Devices extends Controller
             ->first();
 
         $data = array(
-            'title' => 'Edit Devices',
+            'title' => 'Ubah Perangkat',
             'modelData' => $modelData,
             'content' => 'admin/'.$this->modulOp.'/edit'
         );

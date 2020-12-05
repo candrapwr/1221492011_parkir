@@ -53,6 +53,17 @@ class Dasbor extends Controller
 		$totalBulan   = DB::select("
 		SELECT SUM(a.fee) AS fee FROM p_transactions a 
 		WHERE YEAR(a.check_in)=YEAR(NOW()) AND 	MONTH(a.check_in)=MONTH(NOW())	
+		");	
+		$modelDataTG  = DB::select("
+		SELECT 
+		CAST(a.check_in AS DATE) AS dates,
+		a.parking_lot_name,
+		SUM(a.fee) AS fee,
+		(a.parking_lot_target_daily_profit) AS target,
+		(SUM(a.fee)/(a.parking_lot_target_daily_profit))*100 AS capai
+		FROM p_transactions a 
+		GROUP BY CAST(a.check_in AS DATE),a.parking_lot	
+		ORDER BY CAST(a.check_in AS DATE) DESC
 		");		
 		$data = array(  'title'     => '',
                         'totalJukir' => $totalJukir,
@@ -60,6 +71,7 @@ class Dasbor extends Controller
                         'totalTahun'=> $totalTahun[0],
                         'totalBulan'=> $totalBulan[0],
                         'dataPie'=> $dataPie,
+                        'modelDataTG'=> $modelDataTG,
                         'content'   => 'admin/dasbor/index'
                     );
         return view('admin/layout/wrapper',$data);

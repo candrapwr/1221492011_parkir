@@ -15,7 +15,7 @@
 						</div>
 					</div>					
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">ID Smartparkir</label>
+						<label class="col-sm-3 control-label text-right">ID</label>
 						<div class="col-sm-4">
 							<input type="text" name="id_smartparkir" class="form-control" value="{{ old('id_smartparkir') }}" required>
 						</div>
@@ -27,25 +27,25 @@
 						</div>
 					</div>					
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Name</label>
+						<label class="col-sm-3 control-label text-right">Nama</label>
 						<div class="col-sm-9">
 							<input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
 						</div>
 					</div>					
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Address</label>
+						<label class="col-sm-3 control-label text-right">Alamat</label>
 						<div class="col-sm-9">
 							<input type="text" name="address" class="form-control" value="{{ old('address') }}" required>
 						</div>
 					</div>					
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Phone</label>
+						<label class="col-sm-3 control-label text-right">Telpon</label>
 						<div class="col-sm-4">
 							<input type="text" name="phone_number" class="form-control" value="{{ old('phone_number') }}" required>
 						</div>
 					</div>					
 					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Role</label>					
+						<label class="col-sm-3 control-label text-right">Hak Akses</label>					
 						<div class="col-sm-6">
 							<select name="role" class="form-control" required>
 								<option value=""></option>
@@ -65,8 +65,8 @@
                         <label class="col-sm-3 control-label text-right"></label>
                         <div class="col-sm-9">
                             <div class="form-group pull-right btn-group">
-                                <input type="submit" name="submit" class="btn btn-primary " value="Save Add Data">
-                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                                <input type="submit" name="submit" class="btn btn-primary " value="Simpan">
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Batal</button>
                             </div>
                         </div>
                         <div class="clearfix"></div>

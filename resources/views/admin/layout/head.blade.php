@@ -23,6 +23,8 @@ $site = DB::table('konfigurasi')->first();
   <script src="{{ asset('public/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
   <!-- timepicker -->
   <link rel="stylesheet" href="{{ asset('public/jquery-timepicker/jquery.timepicker.min.css') }}">
+  <!-- select2 -->
+  <link rel="stylesheet" href="{{ asset('public/js/select2/select2.min.css') }}">
   <!-- Custom styles for this page -->
   <link href="{{ asset('public/admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
   <!-- sweetalert -->
