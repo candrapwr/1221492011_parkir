@@ -77,6 +77,15 @@ function()
     Route::get('admin/assigns/delete/{par1}', 'Assigns@delete');
     Route::get('admin/assigns/sdelete/{par1}', 'Assigns@sdelete');
     Route::post('admin/assigns/proses', 'Assigns@proses');
+
+	// Assigns P
+    Route::get('admin/assignspengawas', 'Assignspengawas@index');
+    Route::post('admin/assignspengawas/tambah', 'Assignspengawas@tambah');
+    Route::get('admin/assignspengawas/edit/{par1}', 'Assignspengawas@edit');
+    Route::post('admin/assignspengawas/proses_edit', 'Assignspengawas@proses_edit');
+    Route::get('admin/assignspengawas/delete/{par1}', 'Assignspengawas@delete');
+    Route::get('admin/assignspengawas/sdelete/{par1}', 'Assignspengawas@sdelete');
+    Route::post('admin/assignspengawas/proses', 'Assignspengawas@proses');	
 	
 	// User Devices
     Route::get('admin/userdevices', 'Userdevices@index');

@@ -89,6 +89,10 @@
     <div class="sidebar-heading">Operation Management</div>
     <hr class="sidebar-divider">
     <li class="nav-item">
+        <a class="nav-link" href="{{ asset('admin/assignspengawas') }}">
+        <i class="fa fa-fw fa-user-circle"></i> <span>Wilayah Pengawas</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/assigns') }}">
         <i class="fa fa-fw fa-user-circle"></i> <span>Daftar Jukir</span></a>
     </li>

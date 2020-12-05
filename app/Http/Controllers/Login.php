@@ -59,12 +59,27 @@ class Login extends Controller
         $user       = $model->login($username);
         if($user) {
 			if(Hash::check($password, $user->password) AND $user->role!=2){
-				$request->session()->put('id_user', $user->id);
-				$request->session()->put('nama', $user->name);
-				$request->session()->put('username', $user->username);
-				$request->session()->put('akses_level', $user->role);
-				$request->session()->put('role', $user->role);
-				return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);
+				//cek kawasan pengawas
+				if($user->role==1){
+					$userP = $model->cek_pengawas($user->id);
+					if($userP){
+						$request->session()->put('id_user', $user->id);
+						$request->session()->put('nama', $user->name);
+						$request->session()->put('username', $user->username);
+						$request->session()->put('akses_level', $user->role);
+						$request->session()->put('role', $user->role);
+						return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);
+					}else{
+						return redirect('login')->with(['warning' => 'Login failed failed, pengawas belum punya wilayah !']);
+					}
+				}else{
+					$request->session()->put('id_user', $user->id);
+					$request->session()->put('nama', $user->name);
+					$request->session()->put('username', $user->username);
+					$request->session()->put('akses_level', $user->role);
+					$request->session()->put('role', $user->role);
+					return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);					
+				}
 			}else{
 				return redirect('login')->with(['warning' => 'Login failed failed, please check your credentials ER-02']);
 			}
