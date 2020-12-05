@@ -26,7 +26,6 @@
 					<th width="5%">No</th>
 					<th>Nama</th>
 					<th>Lokasi</th>
-					<th>Map</th>
 					<th>Wilayah</th>
 					<th>Target Hari</th>
 					<th>Target Bulan</th>
@@ -41,7 +40,6 @@
 				</td>
 				<td><?php echo $value->name ?></td>
 				<td><?php echo $value->address ?></td>
-				<td>[]</td>
 				<td><?php echo $value->territory_name ?></td>
 				<td><?php echo number_format($value->target_daily_profit) ?></td>
 				<td><?php echo number_format($value->target_daily_profit*30) ?></td>
