@@ -25,7 +25,7 @@
 					<div class="form-group row">
 						<label class="col-sm-3 control-label text-right">NPP</label>
 						<div class="col-sm-4">
-							<input type="text" name="npp" class="form-control" value="<?php echo $modelData->npp ?>" required>
+							<input type="text" name="npp" class="form-control" value="<?php echo $modelData->npp ?>">
 						</div>
 					</div>					
 					<div class="form-group row">
