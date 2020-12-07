@@ -37,7 +37,7 @@
 				</td>
 				<td><?php echo $value->dates ?></td>
 				<td><?php echo $value->jukir_name ?></td>
-				<td><?php echo number_format($value->fee) ?></td>
+				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>
@@ -63,7 +63,7 @@
 				</td>
 				<td><?php echo $value->dates ?></td>
 				<td><?php echo $value->parking_lot_name ?></td>
-				<td><?php echo number_format($value->fee) ?></td>
+				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>
@@ -89,7 +89,7 @@
 				</td>
 				<td><?php echo $value->dates ?></td>
 				<td><?php echo $value->transportation_name ?></td>
-				<td><?php echo number_format($value->fee) ?></td>
+				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>
@@ -121,7 +121,7 @@
 				<td><?php echo $value->parking_lot_name ?></td>
 				<td><?php echo $value->territory_name ?></td>
 				<td><?php echo $value->transportation_name ?></td>
-				<td><?php echo number_format($value->fee) ?></td>
+				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>
@@ -148,19 +148,19 @@
 	info: false
  });
  $('#tbl2').DataTable({
-    searching: false, 
+    searching: true, 
     paging: true,
     dom: 'Bfrtip',
 	info: false
  });
  $('#tbl3').DataTable({
-    searching: false, 
+    searching: true, 
     paging: true,
     dom: 'Bfrtip',
 	info: false
  });
  $('#tbl4').DataTable({
-    searching: false, 
+    searching: true, 
     paging: true,
     dom: 'Bfrtip',
 	info: false
