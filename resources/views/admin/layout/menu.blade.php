@@ -13,7 +13,7 @@ $site                 = DB::table('konfigurasi')->first();
       <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
       </button>
-      <a href="{{ asset('admin/dasbor') }}" class="btn btn-sm"><i class="fa fa-tachometer-alt"></i> Dasbor</a> 
+      <a href="{{ asset('admin/dasbor') }}" class="btn btn-sm"><i class="fa fa-tachometer-alt"></i> Beranda</a> 
       <!-- Topbar Navbar -->
       <ul class="navbar-nav ml-auto">
 
@@ -43,7 +43,11 @@ $site                 = DB::table('konfigurasi')->first();
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo Session()->get('nama'); ?> </span>
-            <img class="img-profile rounded-circle" src="{{ asset('public/upload/user/thumbs/user.png') }}">
+				<?php if(@getimagesize($value->image_profile)){ ?>
+				<img class="img-profile rounded-circle" src="<?php echo $value->image_profile?>">
+				<?php }else{ ?>
+				<img class="img-profile rounded-circle" src="{{ asset('public/upload/user/thumbs/user.png') }}">
+				<?php } ?>
           </a>
           <!-- Dropdown - User Information -->
           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
