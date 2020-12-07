@@ -63,7 +63,14 @@
 							<input type="password" name="password" class="form-control" value="" autocomplete="off">
 							<em>Kosongkan jika tidak ingin menggati password</em>
 						</div>
-					</div>		
+					</div>	
+					<div class="form-group row">
+						<label class="col-sm-3 control-label text-right">Upload foto profil</label>
+						<div class="col-sm-9">
+							<input type="file" name="gambar" class="form-control" placeholder="Upload Foto" value="">
+							<em>Kosongkan jika tidak ingin menggati foto</em>
+						</div>
+					</div>					
 
     <div class="form-group row">
         <label class="col-sm-3 control-label text-right"></label>

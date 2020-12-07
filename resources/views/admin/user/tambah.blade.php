@@ -57,6 +57,12 @@
 						<div class="col-sm-9">
 							<input type="password" name="password" class="form-control" value="" required autocomplete="off">
 						</div>
+					</div>	
+					<div class="form-group row">
+						<label class="col-sm-3 control-label text-right">Upload foto profil</label>
+						<div class="col-sm-9">
+							<input type="file" name="gambar" class="form-control" placeholder="Upload Foto" value="">
+						</div>
 					</div>						
                     <div class="form-group row">
                         <label class="col-sm-3 control-label text-right"></label>

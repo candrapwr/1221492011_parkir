@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
+use Image;
 
 class User extends Controller
 {
@@ -71,16 +72,50 @@ class User extends Controller
 		
 		$code = $this->getKode($request->role);
 
-        DB::table($this->tableOp)->insert([
-		'username' => $request->username,
-		'id_smartparkir' => $code,
-		'npp' => $request->npp,
-		'name' => $request->name,
-		'address' => $request->address,
-		'phone_number' => $request->phone_number,
-		'role' => $request->role,
-		'password' => Hash::make($request->password)
-		]);
+        $image = $request->file('gambar');
+        if (!empty($image))
+        {
+            // UPLOAD START
+            $filenamewithextension = $request->file('gambar')
+                ->getClientOriginalName();
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+            $input['nama_file'] = "profil_".time().".jpg";
+            $destinationPath = public_path('upload/user/thumbs/');
+            $img = Image::make($image->getRealPath() , array(
+                'width' => 150,
+                'height' => 150,
+                'grayscale' => false
+            ));
+            $img->save($destinationPath . '/' . $input['nama_file']);
+            //$destinationPath = public_path('upload/user/');
+            //$image->move($destinationPath, $input['nama_file']);
+            // END UPLOAD
+        }
+		
+		if($input['nama_file']){
+			DB::table($this->tableOp)->insert([
+			'username' => $request->username,
+			'id_smartparkir' => $code,
+			'npp' => $request->npp,
+			'name' => $request->name,
+			'address' => $request->address,
+			'phone_number' => $request->phone_number,
+			'role' => $request->role,
+			'password' => Hash::make($request->password)
+			]);
+		}else{
+			DB::table($this->tableOp)->insert([
+			'username' => $request->username,
+			'id_smartparkir' => $code,
+			'npp' => $request->npp,
+			'name' => $request->name,
+			'address' => $request->address,
+			'phone_number' => $request->phone_number,
+			'role' => $request->role,
+			'image_profile' => "https://reto-parking.id/web_new/public/upload/user/thumbs/".$input['nama_file'],
+			'password' => Hash::make($request->password)
+			]);			
+		}
         return redirect('admin/'.$this->modulOp.'')
             ->with(['sukses' => 'Data has been added']);
     }
@@ -95,18 +130,28 @@ class User extends Controller
         request()
             ->validate(['username' => 'required']);
 
-		if($request->password){
-		DB::table($this->tableOp)
-			->where($this->tableOpK, $request->id)
-			->update([
-			'npp' => $request->npp,
-			'name' => $request->name,
-			'address' => $request->address,
-			'phone_number' => $request->phone_number,
-			'role' => $request->role,
-			'password' => Hash::make($request->password)
-			]);
-		}else{
+        $image = $request->file('gambar');
+        if (!empty($image))
+        {
+            // UPLOAD START
+            $filenamewithextension = $request->file('gambar')
+                ->getClientOriginalName();
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+            $input['nama_file'] = "profil_".time().".jpg";
+            $destinationPath = public_path('upload/user/thumbs/');
+            $img = Image::make($image->getRealPath() , array(
+                'width' => 150,
+                'height' => 150,
+                'grayscale' => false
+            ));
+            $img->save($destinationPath . '/' . $input['nama_file']);
+            //$destinationPath = public_path('upload/user/');
+            //$image->move($destinationPath, $input['nama_file']);
+            // END UPLOAD
+        }
+		
+		if($input['nama_file']){
+			if($request->password){
 			DB::table($this->tableOp)
 				->where($this->tableOpK, $request->id)
 				->update([
@@ -114,8 +159,45 @@ class User extends Controller
 				'name' => $request->name,
 				'address' => $request->address,
 				'phone_number' => $request->phone_number,
-				'role' => $request->role
-				]);			
+				'role' => $request->role,
+				'image_profile' => "https://reto-parking.id/web_new/public/upload/user/thumbs/".$input['nama_file'],
+				'password' => Hash::make($request->password)
+				]);
+			}else{
+				DB::table($this->tableOp)
+					->where($this->tableOpK, $request->id)
+					->update([
+					'npp' => $request->npp,
+					'name' => $request->name,
+					'address' => $request->address,
+					'phone_number' => $request->phone_number,
+					'role' => $request->role,
+					'image_profile' => "https://reto-parking.id/web_new/public/upload/user/thumbs/".$input['nama_file'],
+					]);			
+			}
+		}else{
+			if($request->password){
+			DB::table($this->tableOp)
+				->where($this->tableOpK, $request->id)
+				->update([
+				'npp' => $request->npp,
+				'name' => $request->name,
+				'address' => $request->address,
+				'phone_number' => $request->phone_number,
+				'role' => $request->role,
+				'password' => Hash::make($request->password)
+				]);
+			}else{
+				DB::table($this->tableOp)
+					->where($this->tableOpK, $request->id)
+					->update([
+					'npp' => $request->npp,
+					'name' => $request->name,
+					'address' => $request->address,
+					'phone_number' => $request->phone_number,
+					'role' => $request->role
+					]);			
+			}			
 		}
         return redirect('admin/'.$this->modulOp.'')
             ->with(['sukses' => 'Data has update']);

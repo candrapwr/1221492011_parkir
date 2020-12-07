@@ -35,7 +35,7 @@
 				<td class="text-center">
 					<small class="text-center"><?php echo $i ?></small>
 				</td>
-				<td><?php echo $value->dates ?></td>
+				<td><?php echo date('d/m/Y',strtotime($value->dates)) ?></td>
 				<td><?php echo $value->jukir_name ?></td>
 				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
@@ -61,7 +61,7 @@
 				<td class="text-center">
 					<small class="text-center"><?php echo $i ?></small>
 				</td>
-				<td><?php echo $value->dates ?></td>
+				<td><?php echo date('d/m/Y',strtotime($value->dates)) ?></td>
 				<td><?php echo $value->parking_lot_name ?></td>
 				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
@@ -87,7 +87,7 @@
 				<td class="text-center">
 					<small class="text-center"><?php echo $i ?></small>
 				</td>
-				<td><?php echo $value->dates ?></td>
+				<td><?php echo date('d/m/Y',strtotime($value->dates)) ?></td>
 				<td><?php echo $value->transportation_name ?></td>
 				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 				</tr>
@@ -116,7 +116,7 @@
 				<td class="text-center">
 					<small class="text-center"><?php echo $i ?></small>
 				</td>
-				<td><?php echo $value->dates ?></td>
+				<td><?php echo date('d/m/Y',strtotime($value->dates)) ?></td>
 				<td><?php echo $value->jukir_name ?></td>
 				<td><?php echo $value->parking_lot_name ?></td>
 				<td><?php echo $value->territory_name ?></td>

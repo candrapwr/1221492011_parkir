@@ -24,10 +24,10 @@
 			<thead>
 				<tr>
 					<th width="5%">No</th>
+					<th></th>
 					<th>Username</th>
 					<th>Nama</th>
 					<th>ID</th>
-					<th>NPP</th>
 					<th>ALamat</th>
 					<th>Telepon</th>
 					<th>Hak Akses</th>
@@ -39,10 +39,14 @@
 				<td class="text-center">
 					<small class="text-center"><?php echo $i ?></small>
 				</td>
+				<td>
+				<?php if(@getimagesize($value->image_profile)){ ?>
+				<img src="<?php echo $value->image_profile?>" width="50px">
+				<?php } ?>
+				</td>
 				<td><?php echo $value->username ?></td>
 				<td><?php echo $value->name ?></td>
 				<td><?php echo $value->id_smartparkir ?></td>
-				<td><?php echo $value->npp ?></td>
 				<td><?php echo $value->address ?></td>
 				<td><?php echo $value->phone_number ?></td>
 				<td><?php echo $value->role_name ?></td>
