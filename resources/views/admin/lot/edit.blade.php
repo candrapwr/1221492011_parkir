@@ -18,34 +18,30 @@
 		</div>
 	</div>
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Alamat</label>
-		<div class="col-sm-9">
-			<textarea name="address" id="address"  class="form-control"><?php echo $modelData->address ?></textarea>						
+		<label class="col-sm-3 control-label text-right"></label>
+		<div class="col-sm-4">
+			<div id="map" style="border:1px solid #0b0;height:450px;width:750px;"></div>
+				<input id="pac-input" class="form-control" style="margin-left:12px;;margin-top:12px;width:60%;" type="text" placeholder="Cari tempat" size="10">
 		</div>
 	</div>
 	<div class="form-group row">
 		<label class="col-sm-3 control-label text-right"></label>
-		<div class="col-sm-4">
-			<div id="map" style="border:1px solid #0b0;height:450px;width:750px;"></div>
-				<input id="pac-input" class="form-control" style="margin-top:12px;width:60%;" type="text" placeholder="Search Place" size="10">
-			</div>
-	</div>	
-	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Lat.</label>
-		<div class="col-sm-4">
-			<input type="text" name="lat" id="lat" class="form-control" value="<?php echo $modelData->lat ?>" required>
+		<div class="col-sm-9">
+			<em>Geser marker untuk menentukan titik parkir</em>
 		</div>
 	</div>	
 	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Lng.</label>
-		<div class="col-sm-4">
-			<input type="text" name="lng" id="lng" class="form-control" value="<?php echo $modelData->lng ?>" required>
+		<label class="col-sm-3 control-label text-right">Lokasi</label>
+		<div class="col-sm-9">
+			<textarea name="address" id="address"  class="form-control"><?php echo $modelData->address ?></textarea>	
+			<input type="hidden" name="lat" id="lat" class="form-control" value="<?php echo $modelData->lat ?>" required>
+			<input type="hidden" name="lng" id="lng" class="form-control" value="<?php echo $modelData->lng ?>" required>
 		</div>
-	</div>					
+	</div>		
 	<div class="form-group row">
 		<label class="col-sm-3 control-label text-right">Wilayah</label>					
 		<div class="col-sm-6">
-			<select name="territory" class="form-control" required>
+			<select name="territory" class="form-control sel2" required>
 				<option value=""></option>
 				@foreach($modelTerritory as $territory)
 				<option value="{{ $territory->id }}" @if($territory->id==$modelData->territory) selected @endif>{{ $territory->name }}</option>
@@ -53,12 +49,6 @@
 			</select>
 		</div>	
 	</div>
-	<div class="form-group row">
-		<label class="col-sm-3 control-label text-right">Target Harian</label>
-		<div class="col-sm-4">
-			<input type="number" name="target_daily_profit" class="form-control" value="<?php echo $modelData->target_daily_profit ?>" required>
-		</div>
-	</div>	
 	<div class="form-group row">
 		<label class="col-sm-3 control-label text-right">Set Tampil Target</label>					
 		<div class="col-sm-6">
@@ -68,7 +58,13 @@
 				<option value="BULANAN" @if('BULANAN'==$modelData->target_view) selected @endif>BULANAN</option>
 			</select>
 		</div>	
-	</div>
+	</div>	
+	<div class="form-group row">
+		<label class="col-sm-3 control-label text-right">Target Parkir</label>
+		<div class="col-sm-4">
+			<input type="number" name="target_daily_profit" class="form-control" value="<?php echo $modelData->target_daily_profit ?>" required>
+		</div>
+	</div>	
     <div class="form-group row">
         <label class="col-sm-3 control-label text-right"></label>
         <div class="col-sm-9">
@@ -129,6 +125,8 @@
 				center: myLatLng,
 				zoom: zoomset,
 				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				streetViewControl: false,
+				mapTypeControl: false
 
 		});
 		
@@ -219,7 +217,8 @@
 		geocoder.geocode({'location': latlng}, function(results, status) {
 			if (status === 'OK') {
 					if (results[0]) {
-						$(alamat).val(results[0].formatted_address);
+						//console.log(results[0].formatted_address);
+						document.getElementById('address').value=results[0].formatted_address;
 					} else {
 						window.alert('No results found');
 					}

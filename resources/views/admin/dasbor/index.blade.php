@@ -1,5 +1,5 @@
 <div class="alert alert-info">
-  Hai <strong>{{ Session()->get('nama') }}</strong>, Selamat datang di Halaman Dashboard Administrator
+  Hai <strong>{{ Session()->get('nama') }}</strong>, Selamat datang di Halaman Beranda Administrator
 </div>
 <hr>
 <div class="row">
@@ -45,7 +45,7 @@
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Transaksi Tahun Ini</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp <?php echo number_format($totalTahun->fee) ?></div>
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Rp <?php echo number_format($totalTahun->fee,2,',','.') ?></div>
                         </div>
                       </div>
                     </div>
@@ -64,7 +64,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Transaksi Bulan Ini</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format($totalBulan->fee) ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format($totalBulan->fee,2,',','.') ?></div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-money-bill fa-2x text-success"></i>
@@ -152,10 +152,10 @@
 									<td class="text-center">
 										<small class="text-center"><?php echo $i ?></small>
 									</td>
-									<td><?php echo $value->dates ?></td>
+									<td><?php echo date('d/m/Y',strtotime($value->dates)) ?></td>
 									<td><?php echo $value->parking_lot_name ?></td>
-									<td><?php echo number_format($value->target) ?></td>
-									<td><?php echo number_format($value->fee) ?></td>
+									<td>Rp. <?php echo number_format($value->target,2,',','.') ?></td>
+									<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
 									<td><?php echo round($value->capai,2) ?>%</td>
 									</tr>
 									<?php $i++; } ?>
@@ -173,7 +173,7 @@
 <script src="{{ asset('public/admin/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 <script>
  $('#tbl1').DataTable({
-    searching: false, 
+    searching: true, 
     paging: true,
     dom: 'Bfrtip',
 	info: false

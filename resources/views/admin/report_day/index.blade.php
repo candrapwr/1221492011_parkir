@@ -1,5 +1,5 @@
 <div class="callout callout-info">
-<h5 class="mt-4 mb-2">&nbsp;&nbsp;Tentungkan Periode</h5>
+<h5 class="mt-4 mb-2">&nbsp;&nbsp;Tentukan Periode</h5>
 <div class="row col-6">
   <div class="col-lg-6">
 	<div class="input-group">

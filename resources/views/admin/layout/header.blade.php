@@ -49,7 +49,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ asset('admin/dasbor') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>Beranda</span></a>
     </li>
     <!-- TRANSAKSI -->
     <hr class="sidebar-divider">

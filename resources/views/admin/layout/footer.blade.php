@@ -202,7 +202,8 @@ tinymce.init({
 	<script>
 	$('.sel2').select2({
     dropdownAutoWidth : true,
-    width: 'auto'
+    width: '80%'
+	
 });
 	</script>
 </body>

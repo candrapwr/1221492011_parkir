@@ -27,7 +27,7 @@
 					<th>Nama</th>
 					<th>Lokasi</th>
 					<th>Wilayah</th>
-					<th>Target Hari</th>
+					<th>Target Parkir</th>
 					<th>Target Bulan</th>
 					<th>Set Tampil</th>
 					<th width="5%">Actions</th>
