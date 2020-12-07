@@ -68,6 +68,7 @@ class Login extends Controller
 						$request->session()->put('username', $user->username);
 						$request->session()->put('akses_level', $user->role);
 						$request->session()->put('role', $user->role);
+						$request->session()->put('image_profile', $user->image_profile);
 						return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);
 					}else{
 						return redirect('login')->with(['warning' => 'Login failed failed, pengawas belum punya wilayah !']);
@@ -78,6 +79,7 @@ class Login extends Controller
 					$request->session()->put('username', $user->username);
 					$request->session()->put('akses_level', $user->role);
 					$request->session()->put('role', $user->role);
+					$request->session()->put('image_profile', $user->image_profile);
 					return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);					
 				}
 			}else{
@@ -95,6 +97,7 @@ class Login extends Controller
         Session()->forget('username');
         Session()->forget('akses_level');
         Session()->forget('role');
+        Session()->forget('image_profile');
         return redirect('login')->with(['sukses' => 'Anda berhasil logout']);
     }
 

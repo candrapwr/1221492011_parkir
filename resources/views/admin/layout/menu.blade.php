@@ -43,8 +43,8 @@ $site                 = DB::table('konfigurasi')->first();
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo Session()->get('nama'); ?> </span>
-				<?php if(@getimagesize($value->image_profile)){ ?>
-				<img class="img-profile rounded-circle" src="<?php echo $value->image_profile?>">
+				<?php if(@getimagesize(Session()->get('image_profile'))){ ?>
+				<img class="img-profile rounded-circle" src="<?php echo Session()->get('image_profile') ?>">
 				<?php }else{ ?>
 				<img class="img-profile rounded-circle" src="{{ asset('public/upload/user/thumbs/user.png') }}">
 				<?php } ?>
