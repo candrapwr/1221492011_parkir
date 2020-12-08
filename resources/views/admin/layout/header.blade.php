@@ -68,6 +68,10 @@ $site                 = DB::table('konfigurasi')->first();
             <a class="nav-link" href="{{ asset('admin/resume_day') }}">
                 <i class="fas fa-fw fa-newspaper"></i> <span>Transaksi Harian</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ asset('admin/statistik') }}">
+                <i class="fas fa-fw fa-newspaper"></i> <span>Statistik</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider">
         <div class="sidebar-heading">Laporan</div>
@@ -83,7 +87,7 @@ $site                 = DB::table('konfigurasi')->first();
         <?php if (Session()->get('role') == '99') { ?>
             <!-- Divider -->
             <hr class="sidebar-divider">
-            <div class="sidebar-heading">Device Management</div>
+            <div class="sidebar-heading">Pengaturan Perangkat</div>
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ asset('admin/userdevices') }}">
@@ -95,7 +99,7 @@ $site                 = DB::table('konfigurasi')->first();
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
-            <div class="sidebar-heading">Operation Management</div>
+            <div class="sidebar-heading">Pengaturan Operasional</div>
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ asset('admin/assignspengawas') }}">
@@ -111,7 +115,7 @@ $site                 = DB::table('konfigurasi')->first();
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
-            <div class="sidebar-heading">Parking Settings</div>
+            <div class="sidebar-heading">Pengaturan Parkir</div>
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ asset('admin/fee') }}">
