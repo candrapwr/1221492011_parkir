@@ -44,8 +44,8 @@
         <label class="col-sm-3 control-label text-right"></label>
         <div class="col-sm-9">
             <div class="form-group pull-right btn-group">
-                <input type="submit" name="submit" class="btn btn-primary " value="Save">
-                <a href="{{ asset('admin/devices') }}" class="btn btn-danger">Back</a>
+                <input type="submit" name="submit" class="btn btn-primary " value="Simpan">
+                <a href="{{ asset('admin/devices') }}" class="btn btn-danger">Batal</a>
             </div>
         </div>
         <div class="clearfix"></div>

@@ -56,20 +56,51 @@ class Transportation extends Controller
         request()
             ->validate(['name' => 'required']);
 
-        DB::beginTransaction();
-        try {
-            DB::table($this->tableOp)->insert([
-                'name' => $request->name,
-                'description' => $request->description,
-                'image' => $request->image,
-                'code' => $request->code,
-                'fee' => '0'
-            ]);
-            DB::commit();
-            $this->respon['sukses'] = 'Berhasil';
-        } catch (\Exception $e) {
-            DB::rollback();
-            $this->respon['warning'] = $e->getMessage();
+        $image = $request->file('gambar');
+        if (!empty($image)) {
+            // UPLOAD START
+            $filenamewithextension = $request->file('gambar')
+                ->getClientOriginalName();
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+            $input['nama_file'] = "trans_icon_" . time() . "";
+            $destinationPath = public_path('upload/image/icon/');
+            $image->move($destinationPath, $input['nama_file'] . ".png");
+            // END UPLOAD
+        } else {
+            $input['nama_file'] = null;
+        }
+
+        if ($input['nama_file']) {
+            DB::beginTransaction();
+            try {
+                DB::table($this->tableOp)->insert([
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'image' => $input['nama_file'],
+                    'code' => $request->code,
+                    'fee' => '0'
+                ]);
+                DB::commit();
+                $this->respon['sukses'] = 'Berhasil';
+            } catch (\Exception $e) {
+                DB::rollback();
+                $this->respon['warning'] = $e->getMessage();
+            }
+        } else {
+            DB::beginTransaction();
+            try {
+                DB::table($this->tableOp)->insert([
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'code' => $request->code,
+                    'fee' => '0'
+                ]);
+                DB::commit();
+                $this->respon['sukses'] = 'Berhasil';
+            } catch (\Exception $e) {
+                DB::rollback();
+                $this->respon['warning'] = $e->getMessage();
+            }
         }
 
         return redirect('admin/' . $this->modulOp . '')
@@ -85,22 +116,55 @@ class Transportation extends Controller
         request()
             ->validate(['name' => 'required']);
 
-        DB::beginTransaction();
-        try {
-            DB::table($this->tableOp)
-                ->where($this->tableOpK, $request->id)
-                ->update([
-                    'name' => $request->name,
-                    'description' => $request->description,
-                    'image' => $request->image,
-                    'code' => $request->code,
-                    'fee' => '0'
-                ]);
-            DB::commit();
-            $this->respon['sukses'] = 'Berhasil';
-        } catch (\Exception $e) {
-            DB::rollback();
-            $this->respon['warning'] = $e->getMessage();
+        $image = $request->file('gambar');
+        if (!empty($image)) {
+            // UPLOAD START
+            $filenamewithextension = $request->file('gambar')
+                ->getClientOriginalName();
+            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
+            $input['nama_file'] = "trans_icon_" . time() . "";
+            $destinationPath = public_path('upload/image/icon/');
+            $image->move($destinationPath, $input['nama_file'] . ".png");
+            // END UPLOAD
+        } else {
+            $input['nama_file'] = null;
+        }
+
+        if ($input['nama_file']) {
+            DB::beginTransaction();
+            try {
+                DB::table($this->tableOp)
+                    ->where($this->tableOpK, $request->id)
+                    ->update([
+                        'name' => $request->name,
+                        'description' => $request->description,
+                        'image' => $input['nama_file'],
+                        'code' => $request->code,
+                        'fee' => '0'
+                    ]);
+                DB::commit();
+                $this->respon['sukses'] = 'Berhasil';
+            } catch (\Exception $e) {
+                DB::rollback();
+                $this->respon['warning'] = $e->getMessage();
+            }
+        } else {
+            DB::beginTransaction();
+            try {
+                DB::table($this->tableOp)
+                    ->where($this->tableOpK, $request->id)
+                    ->update([
+                        'name' => $request->name,
+                        'description' => $request->description,
+                        'code' => $request->code,
+                        'fee' => '0'
+                    ]);
+                DB::commit();
+                $this->respon['sukses'] = 'Berhasil';
+            } catch (\Exception $e) {
+                DB::rollback();
+                $this->respon['warning'] = $e->getMessage();
+            }
         }
 
         return redirect('admin/' . $this->modulOp . '')
