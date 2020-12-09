@@ -28,7 +28,7 @@
 					<th>Kendaraan</th>
 					<th>Tarif</th>
 					<th>Kuota</th>
-					<th width="5%">Actions</th>
+					<th width="5%">Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
