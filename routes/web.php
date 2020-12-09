@@ -119,5 +119,6 @@ Route::group(
         Route::get('admin/report_day/r_report_rekap_w', 'Report_day@r_report_rekap_w');
 
         Route::get('admin/statistik/', 'Statistik@index');
+        Route::get('admin/statistik/data', 'Statistik@data');
     }
 );
