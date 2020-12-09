@@ -39,6 +39,12 @@
 			<input type="number" name="fee" class="form-control" value="<?php echo $modelData->fee ?>" required>
 		</div>
 	</div>	
+	<div class="form-group row">
+		<label class="col-sm-3 control-label text-right">Kuota</label>
+		<div class="col-sm-4">
+			<input type="number" name="quota" class="form-control" value="<?php echo $modelData->quota ?>" required>
+		</div>
+	</div>	
     <div class="form-group row">
         <label class="col-sm-3 control-label text-right"></label>
         <div class="col-sm-9">

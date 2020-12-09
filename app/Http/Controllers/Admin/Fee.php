@@ -73,10 +73,11 @@ class Fee extends Controller
             ->validate(['fee' => 'required']);
 
         DB::table($this->tableOp)->insert([
-            'fee' => $request->fee,
-            'transportation' => $request->transportation,
-            'territory' => $request->territory,
-            'created_by' => $request->created_by
+			'fee' => $request->fee,
+			'transportation' => $request->transportation,
+			'quota' => $request->quota,
+			'territory' => $request->territory,
+			'created_by' => $request->created_by
         ]);
         return redirect('admin/' . $this->modulOp . '')
             ->with(['sukses' => 'Data has been added']);
@@ -94,10 +95,11 @@ class Fee extends Controller
         DB::table($this->tableOp)
             ->where($this->tableOpK, $request->id)
             ->update([
-                'fee' => $request->fee,
-                'transportation' => $request->transportation,
-                'territory' => $request->territory,
-                'created_by' => $request->created_by
+				'fee' => $request->fee,
+				'quota' => $request->quota,
+				'transportation' => $request->transportation,
+				'territory' => $request->territory,
+				'created_by' => $request->created_by
             ]);
         return redirect('admin/' . $this->modulOp . '')
             ->with(['sukses' => 'Data has update']);
