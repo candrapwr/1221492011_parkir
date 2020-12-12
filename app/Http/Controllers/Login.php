@@ -27,8 +27,8 @@ class Login extends Controller
             curl_close($ch);
             if($status_code == 200){
                 $res = json_decode($response);
-                if($res->status AND $user->role!=2){
-                    $user       = $res->data->user;
+                $user       = $res->data->user;
+                if($res->status && $user->role!=2){
                     $request->session()->put('id_user', $user->id);
                     $request->session()->put('nama', $user->name);
                     $request->session()->put('username', $user->username);
