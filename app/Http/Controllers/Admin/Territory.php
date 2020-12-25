@@ -12,7 +12,7 @@ class Territory extends Controller
     private $tableOp = 'p_territory';
     private $tableOpK = 'id';
     private $modulOp = 'territory';
-    private $respon = '';
+    //private $respon = '';
 
     public function index()
     {

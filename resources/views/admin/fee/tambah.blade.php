@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Add Fee Rates</h4>
+                <h4 class="modal-title" id="myModalLabel">Tambah Tarif Parkir</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
@@ -36,13 +36,7 @@
 						<div class="col-sm-4">
 							<input type="number" name="fee" class="form-control" value="{{ old('fee') }}" required>
 						</div>
-					</div>	
-					<div class="form-group row">
-						<label class="col-sm-3 control-label text-right">Kuota</label>
-						<div class="col-sm-4">
-							<input type="number" name="quota" class="form-control" value="{{ old('quota') }}" required>
-						</div>
-					</div>						
+					</div>							
                     <div class="form-group row">
                         <label class="col-sm-3 control-label text-right"></label>
                         <div class="col-sm-9">

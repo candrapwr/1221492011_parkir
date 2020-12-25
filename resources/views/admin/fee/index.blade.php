@@ -27,7 +27,6 @@
 					<th>Area Parkir</th>
 					<th>Kendaraan</th>
 					<th>Tarif</th>
-					<th>Kuota</th>
 					<th width="5%">Aksi</th>
 				</tr>
 			</thead>
@@ -39,7 +38,6 @@
 				<td><?php echo $value->territory_name ?></td>
 				<td><?php echo $value->transportation_name ?></td>
 				<td>Rp. <?php echo number_format($value->fee,2,',','.') ?></td>
-				<td><?php echo number_format($value->quota) ?></td>
 				<td>
 					<div class="btn-group">
 						<a href="{{ asset('admin/fee/edit/'.Crypt::encrypt($value->id)) }}" 

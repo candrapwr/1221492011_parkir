@@ -61,6 +61,15 @@ Route::group(
         Route::get('admin/fee/sdelete/{par1}', 'Fee@sdelete');
         Route::post('admin/fee/proses', 'Fee@proses');
 
+        // Quota
+        Route::get('admin/quota', 'Quota@index');
+        Route::post('admin/quota/tambah', 'Quota@tambah');
+        Route::get('admin/quota/edit/{par1}', 'Quota@edit');
+        Route::post('admin/quota/proses_edit', 'Quota@proses_edit');
+        Route::get('admin/quota/delete/{par1}', 'Quota@delete');
+        Route::get('admin/quota/sdelete/{par1}', 'Quota@sdelete');
+        Route::post('admin/quota/proses', 'Quota@proses');
+		
         // Parking Lot
         Route::get('admin/lot', 'Lot@index');
         Route::post('admin/lot/tambah', 'Lot@tambah');

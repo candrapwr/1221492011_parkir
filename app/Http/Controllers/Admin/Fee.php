@@ -75,7 +75,7 @@ class Fee extends Controller
         DB::table($this->tableOp)->insert([
 			'fee' => $request->fee,
 			'transportation' => $request->transportation,
-			'quota' => $request->quota,
+			'quota' => '0',
 			'territory' => $request->territory,
 			'created_by' => $request->created_by
         ]);
@@ -96,7 +96,7 @@ class Fee extends Controller
             ->where($this->tableOpK, $request->id)
             ->update([
 				'fee' => $request->fee,
-				'quota' => $request->quota,
+				'quota' => '0',
 				'transportation' => $request->transportation,
 				'territory' => $request->territory,
 				'created_by' => $request->created_by

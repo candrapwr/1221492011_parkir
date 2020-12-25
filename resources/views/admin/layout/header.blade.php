@@ -122,6 +122,10 @@ $site                 = DB::table('konfigurasi')->first();
                     <i class="fa fa-fw fa-money-bill"></i> <span>Tarif Parkir</span></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ asset('admin/quota') }}">
+                    <i class="fa fa-fw fa-map"></i> <span>Kuota Area Parkir</span></a>
+            </li>			
+            <li class="nav-item">
                 <a class="nav-link" href="{{ asset('admin/lot') }}">
                     <i class="fa fa-fw fa-map"></i> <span>Area Parkir</span></a>
             </li>

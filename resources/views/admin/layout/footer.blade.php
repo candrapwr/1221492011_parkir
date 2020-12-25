@@ -35,7 +35,7 @@ $(document).on("click", ".delete-link", function(e){
     e.preventDefault();
     url = $(this).attr("href");
     swal({
-            title:"Sure you delete this data ?",
+            title:"Anda yakin menghapus ini ?",
             type: "warning",
             showCancelButton: true,
             confirmButtonClass: 'btn btn-danger',

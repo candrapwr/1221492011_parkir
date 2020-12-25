@@ -68,6 +68,7 @@ class Login extends Controller
 						$request->session()->put('username', $user->username);
 						$request->session()->put('akses_level', $user->role);
 						$request->session()->put('role', $user->role);
+						$request->session()->put('role_name', $user->role_name);
 						$request->session()->put('image_profile', $user->image_profile);
 						return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);
 					}else{
@@ -79,6 +80,7 @@ class Login extends Controller
 					$request->session()->put('username', $user->username);
 					$request->session()->put('akses_level', $user->role);
 					$request->session()->put('role', $user->role);
+					$request->session()->put('role_name', $user->role_name);
 					$request->session()->put('image_profile', $user->image_profile);
 					return redirect('admin/dasbor')->with(['sukses' => 'Anda berhasil login']);					
 				}
